@@ -20,21 +20,24 @@ def add_coment(youtubevideo,username,comment_text):
 	 return youtubevideo
 
 def similarity_to_video(youtubevideo1,youtubevideo2):
-	num = len(youtubevideo1)
+	num = list(youtubevideo1)
 	similar = 0
-	for i in range (num):
-		if youtubevideo1[i] == youtubevideo2[i] :
+	for i in range (len(num)):
+		print(num[i])
+		if youtubevideo1[num[i]] == youtubevideo2[num[i]] :
 			similar = similar +1
 
-	return similar/num
+	return similar/len(num)
 
 
 
 
 n = create_youtube_video("first review","nothing",["amazing","wow","les go","nice","genuis"])
-for i in range (494) :
+n2 =  create_youtube_video("no","also no",["amazing","wow","les go","nice","genuis"])
+for i in range (495) :
 	like(n)
 print(n) 
+print(similarity_to_video(n,n2))
 
 
 
